@@ -1,19 +1,22 @@
 :root {
-    --bg-dark: #07080c;
-    --card-bg: rgba(16, 20, 31, 0.65);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --input-bg: rgba(255, 255, 255, 0.03);
-    --input-border: rgba(255, 255, 255, 0.12);
+    /* Paleta Sépia Profunda e Superfícies Translúcidas */
+    --bg-dark: #140f0c;
+    --card-bg: rgba(28, 20, 16, 0.7);
+    --card-border: rgba(235, 185, 140, 0.14);
+    --input-bg: rgba(255, 230, 200, 0.04);
+    --input-border: rgba(235, 185, 140, 0.2);
     
-    --neon-cyan: #00f0ff;
-    --neon-cyan-glow: rgba(0, 240, 255, 0.35);
-    --neon-magenta: #ff0055;
-    --neon-magenta-glow: rgba(255, 0, 85, 0.35);
-    --neon-green: #00ff88;
-    --neon-green-glow: rgba(0, 255, 136, 0.35);
+    /* Neon em Espectro Âmbar / Ouro / Cobre */
+    --neon-amber: #ffaa33;
+    --neon-amber-glow: rgba(255, 170, 51, 0.4);
+    --neon-copper: #e04424;
+    --neon-copper-glow: rgba(224, 68, 36, 0.4);
+    --neon-gold: #ffd15c;
+    --neon-gold-glow: rgba(255, 209, 92, 0.4);
     
-    --text-primary: #f0f2f8;
-    --text-secondary: #8c93a8;
+    /* Tipografia Arial */
+    --text-primary: #f5ebe0;
+    --text-secondary: #a89485;
 }
 
 * {
@@ -35,7 +38,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Luzes dinâmicas de fundo */
+/* Halos de luz de fundo sépia */
 .ambient-glow {
     position: fixed;
     width: 450px;
@@ -44,20 +47,20 @@ body {
     filter: blur(140px);
     z-index: 0;
     pointer-events: none;
-    opacity: 0.45;
+    opacity: 0.4;
     animation: drift 12s ease-in-out infinite alternate;
 }
 
 .glow-top {
     top: -100px;
     left: 10%;
-    background: var(--neon-cyan);
+    background: var(--neon-amber);
 }
 
 .glow-bottom {
     bottom: -100px;
     right: 10%;
-    background: var(--neon-magenta);
+    background: var(--neon-copper);
     animation-delay: -6s;
 }
 
@@ -66,7 +69,7 @@ body {
     100% { transform: translateY(40px) scale(1.15); }
 }
 
-/* Painel estilo Glassmorphism Arial Transparente */
+/* Painel estilo Glassmorphism Sépia Transparente */
 .surface-panel {
     position: relative;
     z-index: 1;
@@ -78,13 +81,13 @@ body {
     -webkit-backdrop-filter: blur(24px);
     border-radius: 12px;
     padding: 2.5rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 230, 200, 0.15);
     transition: border-color 0.3s ease;
 }
 
 .surface-panel:hover {
-    border-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(235, 185, 140, 0.3);
 }
 
 .panel-header {
@@ -96,12 +99,12 @@ body {
     font-size: 0.65rem;
     font-weight: 900;
     letter-spacing: 0.15em;
-    color: var(--neon-cyan);
-    border: 1px solid var(--neon-cyan);
+    color: var(--neon-amber);
+    border: 1px solid var(--neon-amber);
     padding: 0.25rem 0.5rem;
     border-radius: 2px;
     margin-bottom: 0.8rem;
-    box-shadow: 0 0 10px var(--neon-cyan-glow);
+    box-shadow: 0 0 10px var(--neon-amber-glow);
 }
 
 h1 {
@@ -163,13 +166,13 @@ input {
 }
 
 input::placeholder {
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(245, 235, 224, 0.25);
 }
 
 input:focus {
-    background-color: rgba(255, 255, 255, 0.06);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 12px var(--neon-cyan-glow);
+    background-color: rgba(255, 230, 200, 0.08);
+    border-color: var(--neon-amber);
+    box-shadow: 0 0 12px var(--neon-amber-glow);
 }
 
 /* Ação do Botão Principal */
@@ -178,9 +181,9 @@ button#btn-submit {
     margin-top: 0.75rem;
     padding: 0.9rem;
     background: transparent;
-    border: 1px solid var(--neon-cyan);
+    border: 1px solid var(--neon-amber);
     border-radius: 6px;
-    color: #ffffff;
+    color: var(--neon-amber);
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -188,13 +191,13 @@ button#btn-submit {
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    box-shadow: inset 0 0 0 rgba(0, 240, 255, 0), 0 0 15px var(--neon-cyan-glow);
+    box-shadow: inset 0 0 0 rgba(255, 170, 51, 0), 0 0 15px var(--neon-amber-glow);
 }
 
 button#btn-submit:hover {
-    background: var(--neon-cyan);
-    color: #000000;
-    box-shadow: 0 0 25px var(--neon-cyan);
+    background: var(--neon-amber);
+    color: #140f0c;
+    box-shadow: 0 0 25px var(--neon-amber);
     transform: translateY(-2px);
 }
 
@@ -202,7 +205,7 @@ button#btn-submit:active {
     transform: translateY(0);
 }
 
-/* Modal Feedback Pop-up */
+/* Modal Feedback Pop-up Sépia */
 .modal-dialog {
     border: none;
     background: transparent;
@@ -213,19 +216,19 @@ button#btn-submit:active {
 }
 
 .modal-dialog::backdrop {
-    background: rgba(4, 5, 8, 0.8);
+    background: rgba(10, 7, 5, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
 
 .modal-content {
-    background: rgba(14, 18, 28, 0.95);
+    background: rgba(24, 17, 13, 0.96);
     border: 1px solid var(--card-border);
     border-radius: 10px;
     padding: 2rem;
     text-align: center;
     position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
     animation: modalScale 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -242,18 +245,18 @@ button#btn-submit:active {
 }
 
 .modal-content.aprovado .status-indicator {
-    background: var(--neon-green);
-    box-shadow: 0 0 20px var(--neon-green);
+    background: var(--neon-gold);
+    box-shadow: 0 0 20px var(--neon-gold);
 }
 
 .modal-content.reprovado .status-indicator {
-    background: var(--neon-magenta);
-    box-shadow: 0 0 20px var(--neon-magenta);
+    background: var(--neon-copper);
+    box-shadow: 0 0 20px var(--neon-copper);
 }
 
 .modal-content.atencao .status-indicator {
-    background: #ffcc00;
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    background: #d48b38;
+    box-shadow: 0 0 20px rgba(212, 139, 56, 0.6);
 }
 
 .modal-content h2 {
@@ -271,8 +274,8 @@ button#btn-submit:active {
 .btn-modal {
     width: 100%;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 230, 200, 0.05);
+    border: 1px solid rgba(235, 185, 140, 0.25);
     border-radius: 4px;
     color: var(--text-primary);
     font-weight: 700;
@@ -282,9 +285,9 @@ button#btn-submit:active {
 }
 
 .btn-modal:hover {
-    background: #ffffff;
-    color: #000000;
-    border-color: #ffffff;
+    background: var(--neon-amber);
+    color: #140f0c;
+    border-color: var(--neon-amber);
 }
 
 @media (max-width: 480px) {
