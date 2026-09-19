@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const rawIdade = document.getElementById('idade').value.trim();
         const rawAltura = document.getElementById('altura').value.trim();
 
-        // Tratamento de campos nulos/vazios
+        // Tratamento de campos nulos/vazios - outra alteração2
         if (!nome || !rawIdade || !rawAltura) {
             abrirModal('atencao', 'Campos Incompletos', 'Preencha todos os dados solicitados para prosseguir.');
             return;
