@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Triagem Técnica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-bottom"></div>
+
+    <main class="surface-panel">
+        <header class="panel-header">
+            <span class="badge-tag">TRIAGEM DE REQUISITOS</span>
+            <h1>Verificação de Candidatura</h1>
+            <p>Preencha os dados biométricos e cadastrais para validar conformidade com a vaga.</p>
+        </header>
+
+        <form id="form-candidatura" novalidate autocomplete="off">
+            <div class="input-group">
+                <label for="nome">Nome completo</label>
+                <div class="input-wrapper">
+                    <input type="text" id="nome" required placeholder="Digite seu nome completo">
+                    <span class="input-focus-line"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="idade">Idade (anos)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="idade" min="1" max="120" required placeholder="Ex: 22">
+                        <span class="input-focus-line"></span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="altura">Altura (m)</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="altura" required placeholder="Ex: 1,75">
+                        <span class="input-focus-line"></span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="btn-submit">
+                <span class="btn-text">Analisar Elegibilidade</span>
+                <span class="btn-flare"></span>
+            </button>
+        </form>
+    </main>
+
+    <!-- Modal de Resposta Nativo -->
+    <dialog id="modal-feedback" class="modal-dialog">
+        <div class="modal-content">
+            <div id="modal-indicator" class="status-indicator"></div>
+            <h2 id="modal-titulo">Resultado da Avaliação</h2>
+            <p id="modal-mensagem"></p>
+            <button id="modal-btn-fechar" type="button" class="btn-modal">OK</button>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
